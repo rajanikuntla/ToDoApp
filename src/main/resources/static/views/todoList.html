@@ -1,0 +1,20 @@
+ <div class="col-md-8 col-md-offset-4">
+   	<ul class="nav nav-pills">
+        <li><a href="#/addToDo">Add ToDo</a></li>
+    </ul>   
+</div>
+
+<div>
+	<table class="table table-bordered" ng-if="todoList">
+		<tr>
+			<th>ToDo</th>
+			<th></th>
+			<th></th>
+		</tr>
+	    <tr ng-repeat="todo in todoList"  ng-if="!todo.deleted">
+	        <td>{{ todo.name }}</td>
+	        <td><button type="button" class="btn btn-small" ng-click="editToDo(todo.id)">Edit</button></td>
+	        <td><button type="button" class="btn btn-small" ng-click="deleteToDo(todo.id)">Delete</button></td>
+	    </tr>
+	</table>
+</div>
